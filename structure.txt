@@ -1,0 +1,25 @@
+ai_notes_app/
+│
+├── backend/
+│   ├── app.py                  # ملف Flask الرئيسي
+│   ├── database.py             # ملف التعامل مع قاعدة البيانات SQLite
+│   ├── auth.py                 # تسجيل الدخول والخروج وإنشاء الحساب
+│   ├── notes.py                # عمليات النوتس (إضافة، حذف، تلخيص)
+│   ├── gemini_api.py           # ربط Gemini API بالتطبيق
+│   ├── static/                 # ملفات React بعد الـ build هتتحط هنا
+│   └── templates/
+│       └── index.html          # ملف الدخول للواجهة React
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/         # كل الكمبوننتس (NoteCard, Header, LoginForm, ...)
+│   │   ├── pages/              # صفحات زي Home, Login, Register
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── tailwind.config.js
+│   ├── package.json
+│   └── vite.config.js
+│
+├── requirements.txt            # مكتبات الباك إند المطلوبة
+└── README.md
+
