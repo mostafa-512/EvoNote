@@ -1,0 +1,63 @@
+# ===================================
+# 🔹 General
+# ===================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.env
+.env
+venv/
+.env/
+.venv/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ===================================
+# 🔹 Flask Backend
+# ===================================
+instance/
+*.pid
+*.bak
+*.db-journal
+*.sqlite
+*.sqlite3
+*.py[cod]
+
+# ===================================
+# 🔹 Node / React Frontend
+# ===================================
+node_modules/
+dist/
+build/
+.cache/
+.npm/
+.yarn/
+package-lock.json
+yarn-error.log
+coverage/
+*.tsbuildinfo
+
+# ===================================
+# 🔹 IDE & Editors
+# ===================================
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ===================================
+# 🔹 OS Files
+# ===================================
+*.bak
+*.tmp
+*.log
+*.out
+*.orig
+
+
+.local/
