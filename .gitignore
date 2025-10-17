@@ -6,16 +6,17 @@ __pycache__/
 *.pyo
 *.pyd
 *.db
+*.sqlite
 *.sqlite3
 *.log
 *.env
 .env
 venv/
-.env/
 .venv/
 *.swp
 .DS_Store
 Thumbs.db
+.local/
 
 # ===================================
 # 🔹 Flask Backend
@@ -24,8 +25,6 @@ instance/
 *.pid
 *.bak
 *.db-journal
-*.sqlite
-*.sqlite3
 *.py[cod]
 
 # ===================================
@@ -41,6 +40,8 @@ package-lock.json
 yarn-error.log
 coverage/
 *.tsbuildinfo
+dist-ssr/
+*.local
 
 # ===================================
 # 🔹 IDE & Editors
@@ -49,14 +50,26 @@ coverage/
 .idea/
 *.sublime-workspace
 *.sublime-project
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # ===================================
 # 🔹 OS Files
 # ===================================
 *.bak
 *.tmp
-*.log
 *.out
 *.orig
 
-.local/
+# ===================================
+# 🔹 Logs
+# ===================================
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
