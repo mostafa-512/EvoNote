@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -9,8 +7,47 @@ function App() {
   return (
     <>
 
+        <header className='header'>
+
+          <div className="logo">
+            <a href="" id='home'>EvoNote</a>
+          </div>
+
+          <div className="inOut">
+
+              <div className="Login">Login</div>
+              
+              <div className="register">Register</div>
+              {/* <div className="menu">
+                <select name="menu-phone" id="Burger">
+
+                <option value="Settings">settings</option>
+                <option value="">settings</option> 
+                <option value="Logout">Logout</option> 
+
+              </select>
+              </div> */}
+
+            </div>
+
+        </header>
+
+
+        <main className='main'>
+                <div className="chat">
+
+                </div>
+        </main>
+
+
+
+
+
+
+
+
     </>
   )
 }
 
-export default App
+export default App  
