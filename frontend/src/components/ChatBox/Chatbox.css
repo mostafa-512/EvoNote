@@ -1,0 +1,44 @@
+.main{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.chat{
+  width: 50%;
+  height: 35rem;
+  background-color: rgb(30 41 59);
+  border-radius: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+
+.head{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.headh1{
+font-size: 2.4rem;
+}
+.slogan{
+  font-size: 1.4rem;
+}
+
+.textarea{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  background-color: rgb(49, 103, 190);
+}
+

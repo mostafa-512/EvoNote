@@ -1,0 +1,59 @@
+.header{
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inOut,.logo{
+  width: 100%;
+  margin-top: 1rem;
+}
+.inOut{
+  margin-right: 2rem;
+}
+
+.logo{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1.7rem;
+  margin-left: 2rem;
+  font-weight: 500;
+}
+
+
+.inOut{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  font-size: 1.3rem;
+}
+.Links{
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.menuBtn, .closeBtn{
+  font-size: 1.75rem;
+  margin: 0rem 1.25rem;
+  display: none;
+}
+
+
+/* ..................CSS Media Queries................ */
+
+@media only screen and (max-width: 700px){
+  .Login, .register{
+    display: none;
+  }
+  .menuBtn{
+  display: block;
+}
+.logo{
+  font-size: 1.5rem;
+}
+}

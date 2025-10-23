@@ -4,13 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 :root {
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
@@ -26,7 +19,7 @@
 
 
 body {
-  min-width: 320px;
+  min-width: 100%;
   min-height: 100vh;
   background: rgb(15 23 42);
 }
