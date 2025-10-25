@@ -1,59 +1,91 @@
-.header{
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #3e38b8;
+}
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+}
+
+
+
+
+
+/* .header{
   width: 100%;
   height: 5rem;
   display: flex;
   flex-direction: row;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  
 }
 
-.inOut,.logo{
-  width: 100%;
-  margin-top: 1rem;
-}
-.inOut{
-  margin-right: 2rem;
-}
 
 .logo{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   font-size: 1.7rem;
-  margin-left: 2rem;
   font-weight: 500;
 }
 
 
 .inOut{
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  font-size: 1.3rem;
+  font-size: 1.3rem;  
+  margin-right: 1.875rem;
 }
-.Links{
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
+ul li{
+  display: inline-block;
+  margin: 0 1.25rem;
 }
 
+
 .menuBtn, .closeBtn{
+  display: none;
   font-size: 1.75rem;
   margin: 0rem 1.25rem;
-  display: none;
-}
+} */
 
 
 /* ..................CSS Media Queries................ */
 
-@media only screen and (max-width: 700px){
-  .Login, .register{
+/* @media only screen and (max-width: 700px){
+  .Links{
     display: none;
+    width: 100%;
+    background-color: #1e293b;
+    position: absolute;
+    top: 3.75rem;
+    right: 0;
+    text-align: center;
   }
+ 
+
   .menuBtn{
   display: block;
-}
-.logo{
+  }
+  .closeMenu{
+    display: none;
+  }
+
+  ul li{
+    display: block;
+    margin: 0.625rem;
+  }
+
+
+  .logo{
   font-size: 1.5rem;
 }
-}
+
+
+  } */

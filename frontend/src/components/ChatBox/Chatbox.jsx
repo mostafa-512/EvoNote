@@ -6,35 +6,53 @@ function ChatBox (){
 
 
     return(
-                <main className='main'>
-
-                  <div className="chat">
+                <main className='chatContainer'>
 
 
-                    <div className="head">
 
-                      <h1 className='headh1'>Evo Note</h1>
+
+                    <div className="chatHeader">
+
+                      <h1 className='headlogo'>Evo Note</h1>
                       <p className='slogan'>Where Your Ideas Evolve</p>
                     
                     </div>
 
-                    <div className="ChatDiv">
+
+
+                    <div className="ChatBox">
+                      
+                    </div>
+
+                    <div className="chatInput">
+
+
                       <TextareaAutosize  placeholder="Summarize Your Ideas"
                         // className={styles.TextArea}
                         // value={content}
                         // onChange={handleTextarea} 
                         // onKeyDown={HitEnter}
-                        // minRows={1}
-                        // maxRows={4}
+                        minRows={1}
+                        maxRows={4}
                         // disabled={isDisabled}
                         // ref={textareaReef}
-              
+                        
                         />
-                    </div>
 
 
+                              <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#5f6368"
+      >
+        <path d="M120-160v-240l320-80-320-80v-240l760 320-760 320Z" />
+      </svg>
 
-                  </div>
+                        </div>
+
+
         </main>
     )
 

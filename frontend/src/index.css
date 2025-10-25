@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
   font-family: "Ubuntu", sans-serif;
@@ -17,10 +14,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-body {
-  min-width: 100%;
-  min-height: 100vh;
-  background: rgb(15 23 42);
+html, body {
+  width: 100%;
+  min-height: 100vh;  /* علشان ياخد طول الشاشة */
+  scroll-behavior: smooth;  /* سكروول ناعم */
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: rgb(15 23 42);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-

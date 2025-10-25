@@ -1,44 +1,47 @@
-.main{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-}
-.chat{
-  width: 50%;
-  height: 35rem;
-  background-color: rgb(30 41 59);
-  border-radius: 1.6rem;
+
+.chatContainer{
+  background-color: #1e293b;
+  width: 90%;
+  max-width: 37.5rem;
+  min-height: 70vh;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-
-.head{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+.chatHeader{
   text-align: center;
-}
-.headh1{
-font-size: 2.4rem;
-}
-.slogan{
-  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
-.textarea{
-  width: 100%;
+
+.chatHeader .headlogo {
+   font-size: 2rem;
+   font-weight: 600;
+   color: #38bdf8;
+}
+
+.chatHeader .slogan {
+  font-size: 1rem;
+  color: #94a3b8;
+}
+
+.ChatBox{
+  background-color: rgb(51 65 85);
+  flex: 1;
+  overflow-y: auto;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chatInput{
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2.5rem;
-  background-color: rgb(49, 103, 190);
+  gap: 0.5rem;
 }
 

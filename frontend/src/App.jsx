@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Header from './components/header/header';
 import ChatBox from './components/ChatBox/Chatbox';
 
