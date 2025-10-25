@@ -1,4 +1,4 @@
-import './Chatbox.css';
+import styles from './Chatbox.module.css';
 import TextareaAutosize from 'react-textarea-autosize';
 
 
@@ -6,29 +6,29 @@ function ChatBox (){
 
 
     return(
-                <main className='chatContainer'>
+                <main className={styles.chatContainer}>
 
 
 
 
-                    <div className="chatHeader">
+                    <div className={styles.chatHeader}>
 
-                      <h1 className='headlogo'>Evo Note</h1>
-                      <p className='slogan'>Where Your Ideas Evolve</p>
+                      <h1 className={styles.headlogo}>Evo Note</h1>
+                      <p className={styles.slogan}>Where Your Ideas Evolve</p>
                     
                     </div>
 
 
 
-                    <div className="ChatBox">
+                    <div className={styles.ChatBox}>
                       
                     </div>
 
-                    <div className="chatInput">
+                    <div className={styles.chatInput}>
 
 
                       <TextareaAutosize  placeholder="Summarize Your Ideas"
-                        // className={styles.TextArea}
+                        className={styles.TextArea}
                         // value={content}
                         // onChange={handleTextarea} 
                         // onKeyDown={HitEnter}
@@ -39,6 +39,7 @@ function ChatBox (){
                         
                         />
 
+                      <button className={styles.SendBtn}>
 
                               <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -46,9 +47,10 @@ function ChatBox (){
         viewBox="0 -960 960 960"
         width="24px"
         fill="#5f6368"
-      >
+        >
         <path d="M120-160v-240l320-80-320-80v-240l760 320-760 320Z" />
       </svg>
+            </button>
 
                         </div>
 
