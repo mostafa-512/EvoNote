@@ -1,0 +1,88 @@
+.parent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+      background: linear-gradient(135deg, #1f1d57, #2b2870);
+
+}
+
+
+
+.loginBox{
+    background-color: #1f1d57;
+    width: 26.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: transparent; */
+    border: 2px solid rgba(255 , 255, 255, .2);
+    backdrop-filter: blur(20px);
+    border-radius: 0.625rem;
+    padding: 1.875rem 2.5rem;
+    /* gap: 0.5rem;  */
+
+}
+
+
+.h1{
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.btn{
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.625rem;
+}
+
+
+
+.inputs,.inputs:focus{
+    font-size: 1rem;
+    letter-spacing: 1px;
+    outline: none;
+    color: rgb(221, 215, 207);
+    border-color: #757575;
+    border-radius: 0.625rem;
+    padding: 0.625rem 0.875rem;
+    background-color: transparent;
+    width: 100%;
+    height: 3.125rem;
+    margin: 1.875rem 0;
+}
+.inputs::placeholder{
+    color: #757575;
+    opacity: 1;
+}
+
+
+
+
+.btnSubmitForRig{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+
+.reFor{
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgetpasswordA,.aReg{
+    text-decoration: none;
+    color: rgb(221, 215, 207);
+}
+.aReg{
+    font-weight: 900;
+}
+.forgetpasswordA:hover,.aReg:hover{
+    text-decoration: underline;
+    color: #757575;
+}
