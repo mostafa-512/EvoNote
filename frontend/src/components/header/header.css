@@ -15,4 +15,63 @@
 }
 
 
+.avatar {
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
+.tuser{
+margin-bottom: 0;
+}
+/* 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background: #1b1b1b;
+  color: white;
+}
+
+.authButtons button {
+  margin-left: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.userMenu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #2a2a2a;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.userMenu:hover .dropdown {
+  display: block;
+}
+
+.logout {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+} */
