@@ -6,6 +6,7 @@ function Header() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -27,7 +28,7 @@ function Header() {
   return(
 
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
-      <div className="container">
+      <div className={"container"}>
 
         <a className="navbar-brand fw-bold fs-4" href="#">
           EvoNote
@@ -59,7 +60,12 @@ function Header() {
 ):( 
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <div className="d-flex flex-lg-row flex-column align-items-lg-center gap-2 mt-3 mt-lg-0 d">
-                <button className="btn px-4 py-2">
+                <div className="userContainer">
+
+                <button 
+                  className="btn px-4 py-2"
+                  onClick={() => setOpenMenu(!openMenu)}
+                >
                   <img
             src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
             alt="user"
@@ -67,14 +73,18 @@ function Header() {
             />
                 </button>
 
-            <div className='tuser'>
-          <p className=''>{username}</p>
-            {/* <button className="btn btn-primary px-4 py-2" onClick={handleLogout}>Log out</button> */}
+          <p className='tuser'>{username}</p>
+          {openMenu && (
+
+          <div className="userProfile">
+            <button className="menuItem logout" onClick={handleLogout}>Log out</button>
+          </div>
+
+          )}
+          </div>
 
             </div>
-
-            </div>
-            </div>
+           </div>
 
 )
 }

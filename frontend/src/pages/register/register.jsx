@@ -34,7 +34,7 @@ function Register() {
                         <div className={`${styles.reFor}`}>
                         </div>
                         <button className={`${styles.btn} btn btn-primary`} type="submit">Register</button>
-                        <div className="log">Already Have Account ? <a href="./login" className={`${styles.aReg}`}>Register</a></div>
+                        <div className="log">Already Have Account ? <a href="./login" className={`${styles.aReg}`}>Login</a></div>
                     </div>
                 </form>
 

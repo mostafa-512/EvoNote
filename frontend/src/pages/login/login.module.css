@@ -13,7 +13,8 @@
 
 .loginBox{
     background-color: #1f1d57;
-    width: 26.25rem;
+    width: 90%;
+    max-width: 26.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -85,4 +86,24 @@
 .forgetpasswordA:hover,.aReg:hover{
     text-decoration: underline;
     color: #757575;
+}
+
+
+@media (max-width: 425px) {
+  .loginBox {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .h1 {
+    font-size: 1.75rem;
+  }
+
+  .inputs {
+    height: 2.75rem;
+    margin: 1.25rem 0;
+  }
+
+  .btn {
+    padding: 0.5rem 0.75rem;
+  }
 }
