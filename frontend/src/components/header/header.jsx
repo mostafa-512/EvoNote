@@ -52,8 +52,8 @@ function Header() {
           <div className="d-flex flex-lg-row flex-column align-items-lg-center gap-2 mt-3 mt-lg-0">
   
     
-              <button className="btn btn-outline-light px-4 py-2 LoginBtn">Log in</button>
-            <button className="btn btn-primary px-4 py-2 SignupBtn">Sign up</button>
+              <button className="btn btn-outline-light px-4 py-2 LoginBtn" onClick={()=>{window.location.href="/login"}}>Log in</button>
+            <button className="btn btn-primary px-4 py-2 SignupBtn" onClick={()=>{window.location.href="/register"}}>Sign up</button>
   </div>
   </div>
 
