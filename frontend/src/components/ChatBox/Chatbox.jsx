@@ -1,8 +1,57 @@
 import styles from './Chatbox.module.css';
+import { useState , useEffect, useRef} from 'react';
+import Markdown from 'react-markdown';
 import TextareaAutosize from 'react-textarea-autosize';
 
 
 function ChatBox (){
+
+
+const divToEndOfChat = useRef(null);
+const textareaReef = useRef(null);
+
+const [messages, setMessages] = useState([]);
+
+const [content, setContent] = useState("");
+function handleTextarea(event) {
+  setContent(event.target.value);
+}
+
+function oSend(){
+  if(content.length>0){
+  setMessages((prevMessages)=> [...prevMessages, {content, role: "user"}]);
+  setContent('');
+}
+console.log([...messages]);
+}
+
+
+      function HitEnter(event) {
+        if(event.key === 'Enter'&& !event.shiftKey){
+          event.preventDefault()
+          oSend()
+  
+        }
+      }
+
+
+
+  useEffect(()=>{
+    const lastMessage = messages[messages.length -1];
+    if (lastMessage?.role === 'user'){
+      divToEndOfChat.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  },[messages])
+  
+  
+
+
+    const WELCOME_MESSAGE_Group = 
+    {
+      role:'evo',
+      content: 'Hello, I am Evo !! Lets Start Summarize Your Ideas...'
+    }
+
 
 
     return(
@@ -20,26 +69,48 @@ function ChatBox (){
 
 
 
+
+
+
                     <div className={styles.ChatBox}>
+
+                      {[WELCOME_MESSAGE_Group, ...messages].map(({role, content}, index) => (
+                        <div key={index} data-role={role} className={styles.Message}>
+                          {content}
+                        </div>
+                      ))}
+
+
+
+
                       
+                    <div className="" ref={divToEndOfChat}></div>
+
+
+
                     </div>
+
+
+
+
+
 
                     <div className={styles.chatInput}>
 
 
                       <TextareaAutosize  placeholder="Summarize Your Ideas"
                         className={styles.TextArea}
-                        // value={content}
-                        // onChange={handleTextarea} 
-                        // onKeyDown={HitEnter}
+                        value={content}
+                        onChange={handleTextarea} 
+                        onKeyDown={HitEnter}
                         minRows={1}
                         maxRows={4}
                         // disabled={isDisabled}
-                        // ref={textareaReef}
+                        ref={textareaReef}
                         
                         />
 
-                      <button className={styles.SendBtn}>
+                      <button className={styles.SendBtn} onClick={oSend}>
 
                               <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +128,11 @@ function ChatBox (){
 
         </main>
     )
+    
+  }
+  
+  
 
-}
 
-export default ChatBox;
+
+  export default ChatBox;

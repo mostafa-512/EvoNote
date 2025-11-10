@@ -1,9 +1,9 @@
 
 .chatContainer{
   background-color: #1e293b;
-  width: 90%;
+  width: 100%;
   max-width: 37.5rem;
-  min-height: 70vh;
+  height: 70vh;
   margin: 2rem auto;
   padding: 1.5rem;
   border-radius: 1.5rem;
@@ -32,12 +32,29 @@
 }
 
 .ChatBox{
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  gap: 0.5rem;
   background-color: rgb(51 65 85);
   flex: 1;
   overflow-y: auto;
   border-radius: 1rem;
   padding: 1rem;
   margin-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.Message{
+  color: #d1d1d1;
+  width: 90%;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+    &[data-role="user"] {
+    align-self: end;
+    background: #20315a;
+    }
 }
 
 .chatInput{
