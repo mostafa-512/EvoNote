@@ -5,26 +5,60 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 
 function ChatBox (){
+  const [messages, setMessages] = useState([]);
+  const [content, setContent] = useState("");
+  const textareaRef = useRef(null);
+  const divToEndOfChat = useRef(null);
+
+  const WELCOME_MESSAGE_Group = 
+  {
+    role:'evo',
+    content: 'Hello, I am Evo !! Lets Start Summarize Your Ideas...'
+  }
 
 
-const divToEndOfChat = useRef(null);
-const textareaReef = useRef(null);
-
-const [messages, setMessages] = useState([]);
-
-const [content, setContent] = useState("");
 function handleTextarea(event) {
   setContent(event.target.value);
 }
 
-function oSend(){
-  if(content.length>0){
-  setMessages((prevMessages)=> [...prevMessages, {content, role: "user"}]);
+async function oSend(){
+  if(content.trim().length>0){
+  setMessages((prevMessages)=> [...prevMessages, {content: content.trim(), role: "user"}]);
   setContent('');
-}
-console.log([...messages]);
+
+  try {
+      const response = await fetch('http://localhost:5000/api/message', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: content.trim() }),
+      });
+      const data = await response.json();
+      
+      const evoMessage = {
+        role: "evo",
+        content: data.reply || "No response from server."
+      };
+      setMessages((prev)=>[...prev, evoMessage]);
+    } catch(error){
+      console.error("Error:", error);
+      const errorMessage = {
+        role: "evo",
+        content: "Sorry, something went wrong. Please try again."
+      }
+      setMessages((prev)=>[...prev, errorMessage]);
+    }
+
+
 }
 
+}
+
+
+  useEffect(()=>{
+    if(textareaRef){
+      textareaRef.current.focus()
+    }
+  },[])
 
       function HitEnter(event) {
         if(event.key === 'Enter'&& !event.shiftKey){
@@ -46,11 +80,6 @@ console.log([...messages]);
   
 
 
-    const WELCOME_MESSAGE_Group = 
-    {
-      role:'evo',
-      content: 'Hello, I am Evo !! Lets Start Summarize Your Ideas...'
-    }
 
 
 
@@ -106,7 +135,7 @@ console.log([...messages]);
                         minRows={1}
                         maxRows={4}
                         // disabled={isDisabled}
-                        ref={textareaReef}
+                        ref={textareaRef}
                         
                         />
 
