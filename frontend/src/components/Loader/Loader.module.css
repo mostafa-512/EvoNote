@@ -1,0 +1,32 @@
+.LoaderWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: light-dark(#f3f3f3,#171717);
+    width: 100%;
+    opacity: 0.6;
+}
+
+@media (prefers-color-scheme:dark){
+  .LoaderWrapper{
+    opacity: 0.75;
+  }
+}
+
+
+.Loader {
+    height: 15px;
+    aspect-ratio: 5;
+    -webkit-mask: linear-gradient(90deg,#0000 ,#000 20% 80%,#0000);
+    background: radial-gradient(closest-side at 37.5% 50%,
+    light-dark(#0d0d0d,#ececec)
+     94%,light-dark(#0d0d0d00,#ececec00)) 0/calc(80%/3) 100%;
+    animation: l48 .75s infinite linear;
+  }
+  @keyframes l48 {
+    100% {background-position: 36.36%}
+  }
