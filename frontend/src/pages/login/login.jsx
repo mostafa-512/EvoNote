@@ -1,7 +1,33 @@
 import styles from './login.module.css';
-
+import { useState, useRef } from 'react';
+import axios from 'axios';
 
 function Login() {
+    const [email, setEmail] = useState('');
+    const data = useRef('');
+
+    addEventListener('input',()=>{setEmail(data.current?.value)});
+
+  async  function handel(e) {
+    e.preventDefault();
+  await  setEmail(data.current?.value);
+   await console.log(email)
+
+   await api.post('/register', {
+    email: email,
+  })
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+  };
+
+
+
+
     return(
         <div className={styles.parent}>
 
@@ -14,9 +40,9 @@ function Login() {
                 </h1>
 
 
-                <form method="post">
+                <form action={"/login"} method="post"onSubmit={handel}>
                     <div className='mb-3'>
-                        <input autoComplete="off" autoFocus className={`${styles.inputs} form-control `} name="Email" placeholder="Email" type="Email" />
+                        <input autoComplete="off" autoFocus className={`${styles.inputs} form-control `} name="email" placeholder="Email" type="Email" ref={data}/>
                     </div>
                     <div className='mb-3'>
                         <input className={`${styles.inputs} form-control `} name="password" placeholder="Password" type="password" />

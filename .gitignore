@@ -17,6 +17,7 @@ venv/
 .DS_Store
 Thumbs.db
 .local/
+flask_session/
 
 # ===================================
 # 🔹 Flask Backend

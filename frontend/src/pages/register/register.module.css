@@ -18,14 +18,29 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* background-color: transparent; */
     border: 2px solid rgba(255 , 255, 255, .2);
     backdrop-filter: blur(20px);
     border-radius: 0.625rem;
     padding: 1.875rem 2.5rem;
-    /* gap: 0.5rem;  */
 
 }
+
+
+/* .RegisterBox{
+    background-color: #1f1d57;
+    width: 90%;
+    max-width: 26.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border: 2px solid rgba(255 , 255, 255, .2);
+    backdrop-filter: blur(20px);
+    border-radius: 0.625rem;
+    padding: 0.875rem 1.5rem;
+
+
+} */
 
 
 .h1{

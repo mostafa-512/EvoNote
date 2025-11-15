@@ -1,7 +1,9 @@
 import styles from './register.module.css';
-
+import { useState } from 'react';
 
 function Register() {
+
+
     return(
         <div className={styles.parent}>
 
@@ -14,15 +16,15 @@ function Register() {
                 </h1>
 
 
-                <form method="post">
+                <form method="post" onSubmit={handleSubmit}>
                     <div className='mb-3'>
-                        <input autoComplete="off" autoFocus className={`${styles.inputs} form-control `} name="firstName" placeholder="First Name" type="text" />
+                        <input autoComplete="off" autoFocus className={`${styles.inputs} form-control `} name="firstName" placeholder="First Name" type="text" onChange={handleChange} />
                     </div>
                     <div className='mb-3'>
-                        <input autoComplete="off"  className={`${styles.inputs} form-control `} name="lastName" placeholder="Last Name" type="text" />
+                        <input autoComplete="off"  className={`${styles.inputs} form-control `} name="lastName" placeholder="Last Name" type="text" onChange={handleChange}/>
                     </div>
                     <div className='mb-3'>
-                        <input autoComplete="off" className={`${styles.inputs} form-control `} name="Email" placeholder="Email" type="Email" />
+                        <input autoComplete="off" className={`${styles.inputs} form-control `} name="Email" placeholder="Email" type="Email"onChange={handleChange}/>
                     </div>
                     <div className='mb-3'>
                         <input className={`${styles.inputs} form-control `} name="password" placeholder="Password" type="password" />
