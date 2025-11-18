@@ -1,0 +1,94 @@
+
+.chatContainer{
+  background-color: #1e293b;
+  width: 100%;
+  max-width: 37.5rem;
+  height: 70vh;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.chatHeader{
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+
+.chatHeader .headlogo {
+   font-size: 2rem;
+   font-weight: 600;
+   color: #38bdf8;
+}
+
+.chatHeader .slogan {
+  font-size: 1rem;
+  color: #94a3b8;
+}
+
+.ChatBox{
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  gap: 0.5rem;
+  background-color: rgb(51 65 85);
+  flex: 1;
+  overflow-y: auto;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.Message{
+  color: #d1d1d1;
+  width: 90%;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+    &[data-role="user"] {
+    align-self: end;
+    background: #20315a;
+    }
+}
+
+.chatInput{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chatInput .TextArea{
+  flex: 1;
+  outline: none;
+  resize: none;
+  border: none;
+  line-height: 2;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  background-color: #334155;
+  color: white;
+}
+
+.chatInput .SendBtn{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: #0d0d0d;
+  width: 2.25rem;
+  height: 2.25rem;
+
+
+}
+.SendBtn svg{
+  fill: #94a3b8
+}
