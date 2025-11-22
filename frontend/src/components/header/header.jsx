@@ -37,7 +37,7 @@ function Header() {
     setIsLoggedIn(false);
     setUsername("");
     setOpenMenu(false);
-    navigate("/");
+    window.location.reload();
   };
 
   return(

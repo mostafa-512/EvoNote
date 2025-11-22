@@ -14,12 +14,12 @@ app = Flask(__name__, static_folder='../frontend/dist', static_url_path='')
 CORS(app)
 
 app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'your-super-secret-key-change-in-production')
-app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=30)
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=60)
 jwt = JWTManager(app)
 
 DB_PATH = 'evo_note.db'
 
-SYSTEM_PROMPT = """You are Evo, a professional assistant specialized in helping users summarize and refine their ideas. 
+SYSTEM_PROMPT = """You are Evo, a professional assistant specialized in helping users summarize and refine their ideas.
 Your role is to:
 - Listen carefully to user ideas and thoughts
 - Provide clear, concise summaries
@@ -39,7 +39,7 @@ def get_db():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
-
+# Made with ChatGPT
 def init_db():
     conn = get_db()
     cursor = conn.cursor()
@@ -82,6 +82,7 @@ def execute_db(query, args=()):
     conn.close()
     return last_id
 
+# Made with ChatGPT
 # bcrypt helpers
 def hash_password(plain_password: str) -> bytes:
     salt = bcrypt.gensalt()
@@ -155,7 +156,7 @@ def login():
     except Exception as e:
         print(f"Login Error: {e}")
         return jsonify({"msg": "Server error during login"}), 500
-
+# Made with help from ChatGPT
 @app.route("/api/history", methods=["GET"])
 @jwt_required()
 def get_history():

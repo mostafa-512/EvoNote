@@ -2,6 +2,7 @@ import styles from './Chatbox.module.css';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Markdown from 'react-markdown';
 import TextareaAutosize from 'react-textarea-autosize';
+import API_BASE_URL from '../../config/api';
 
 function Chatbox() {
     const [messages, setMessages] = useState([]);
@@ -11,14 +12,14 @@ function Chatbox() {
     const textareaRef = useRef(null);
     const divToEndOfChat = useRef(null);
 
-    const API_URL = 'http://localhost:5002/api/chat';
-    const HISTORY_URL = 'http://localhost:5002/api/history';
+    const API_URL = `${API_BASE_URL}/api/chat`;
+    const HISTORY_URL = `${API_BASE_URL}/api/history`;
 
     const WELCOME_MESSAGE = {
         role: 'evo',
         content: 'Hello, I am Evo !! Lets Start Summarize Your Ideas...',
     };
-
+    //  Made with help from ChatGPT
     // Load history on mount if user is logged in
     useEffect(() => {
         async function loadHistory() {
@@ -140,7 +141,7 @@ function Chatbox() {
                 }
 
                 const chunk = decoder.decode(value, { stream: true });
-                console.log("Received chunk:", chunk);
+                // console.log("Received chunk:", chunk);
                 appendChunkToLastMessage(chunk);
                 divToEndOfChat.current?.scrollIntoView({ behavior: 'smooth' });
             }
