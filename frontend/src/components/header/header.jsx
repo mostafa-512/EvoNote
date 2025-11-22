@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './header.css'; 
+import './header.css';
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,6 +32,7 @@ function Header() {
   }, []);
 
   function handleLogout(){
+    
     localStorage.removeItem("token");
     localStorage.removeItem("username");
     setIsLoggedIn(false);
@@ -70,7 +71,7 @@ function Header() {
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <div className="d-flex flex-lg-row flex-column align-items-lg-center gap-2 mt-3 mt-lg-0">
               <div className="userContainer" style={{ position: "relative" }}>
-                <button 
+                <button
                   className="btn px-4 py-2"
                   onClick={() => setOpenMenu(!openMenu)}
                   style={{ background: "none", border: "none" }}
