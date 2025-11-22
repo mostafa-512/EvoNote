@@ -133,6 +133,15 @@ def register():
     except Exception as e:
         print(f"Register Error: {e}")
         return jsonify({"msg": "Server error during registration"}), 500
+@app.route("/logout")
+def logout():
+    """Log user out"""
+
+    # Forget any user_id
+    session.clear()
+
+    # Redirect user to login form
+    return redirect("/")
 
 @app.route("/api/login", methods=["POST"])
 def login():
