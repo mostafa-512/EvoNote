@@ -31,7 +31,6 @@ instance/
 # 🔹 Node / React Frontend
 # ===================================
 node_modules/
-dist/
 build/
 .cache/
 .npm/

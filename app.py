@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = Flask(__name__, static_folder='../frontend/dist', static_url_path='')
+app = Flask(__name__, static_folder='./frontend/dist', static_url_path='')
 CORS(app)
 
 app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'your-super-secret-key-change-in-production')
