@@ -14,12 +14,12 @@ app = Flask(__name__, static_folder='./frontend/dist', static_url_path='')
 CORS(app)
 
 app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'your-super-secret-key-change-in-production')
-app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=60)
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=30)
 jwt = JWTManager(app)
 
-DB_PATH = 'evo_note.db'
+DB_PATH = os.path.join(os.path.dirname(__file__), 'evo_note.db')
 
-SYSTEM_PROMPT = """You are Evo, a professional assistant specialized in helping users summarize and refine their ideas.
+SYSTEM_PROMPT = """You are Evo, a professional assistant specialized in helping users summarize and refine their ideas. 
 Your role is to:
 - Listen carefully to user ideas and thoughts
 - Provide clear, concise summaries
@@ -39,7 +39,7 @@ def get_db():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
-# Made with ChatGPT
+
 def init_db():
     conn = get_db()
     cursor = conn.cursor()
@@ -65,6 +65,12 @@ def init_db():
     conn.commit()
     conn.close()
 
+# ensure DB/tables exist when module is imported (works for wsgi/uvicorn gunicorn)
+try:
+    init_db()
+except Exception as e:
+    print("Error initializing DB on import:", e)
+
 def query_db(query, args=(), one=False):
     conn = get_db()
     cursor = conn.cursor()
@@ -82,7 +88,6 @@ def execute_db(query, args=()):
     conn.close()
     return last_id
 
-# Made with ChatGPT
 # bcrypt helpers
 def hash_password(plain_password: str) -> bytes:
     salt = bcrypt.gensalt()
@@ -133,15 +138,6 @@ def register():
     except Exception as e:
         print(f"Register Error: {e}")
         return jsonify({"msg": "Server error during registration"}), 500
-@app.route("/logout")
-def logout():
-    """Log user out"""
-
-    # Forget any user_id
-    session.clear()
-
-    # Redirect user to login form
-    return redirect("/")
 
 @app.route("/api/login", methods=["POST"])
 def login():
@@ -165,7 +161,7 @@ def login():
     except Exception as e:
         print(f"Login Error: {e}")
         return jsonify({"msg": "Server error during login"}), 500
-# Made with help from ChatGPT
+
 @app.route("/api/history", methods=["GET"])
 @jwt_required()
 def get_history():
@@ -301,5 +297,5 @@ def stream_test():
     return Response(stream_with_context(gen()), mimetype="text/plain")
 
 if __name__ == "__main__":
-    init_db()
+    # init_db()  <-- no longer required here but harmless if kept
     app.run(debug=True, port=5002, use_reloader=False, threaded=True)
